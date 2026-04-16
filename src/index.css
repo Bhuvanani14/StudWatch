@@ -1,0 +1,169 @@
+:root {
+  /* UI Colors - Cyber-Fluid Theme */
+  --bg-dark: #0a0f18;
+  --bg-card: rgba(18, 25, 40, 0.6);
+  --bg-card-hover: rgba(25, 35, 55, 0.8);
+  
+  --primary-accent: #00e0ff;
+  --primary-glow: rgba(0, 224, 255, 0.3);
+  
+  --secondary-accent: #ff0055;
+  --secondary-glow: rgba(255, 0, 85, 0.3);
+  
+  --success: #00ff9d;
+  --warning: #ffb800;
+  --danger: #ff3366;
+  
+  --text-main: #ffffff;
+  --text-muted: #8b9bb4;
+  
+  /* Indian context styling notes:
+     Using vibrant neon overlays typical for festive/sporting environments.
+  */
+  
+  /* Glassmorphism */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(0, 224, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(255, 0, 85, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary-accent);
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-pill {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px var(--primary-glow); }
+  50% { box-shadow: 0 0 20px var(--primary-glow); }
+  100% { box-shadow: 0 0 5px var(--primary-glow); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Fluid Layout Helpers */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary-accent), var(--success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* App Container */
+.app-container {
+  max-width: 600px; /* Slightly wider for modern mobile/tablet feel on desktop */
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .app-container {
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    min-height: 90vh;
+    margin: 5vh auto;
+    border-radius: 40px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+  }
+}
+
+/* Base button */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-accent), #0099ff);
+  color: #000;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* Indian Rupee font fallback if needed */
+.rupee {
+  font-family: Arial, sans-serif;
+}

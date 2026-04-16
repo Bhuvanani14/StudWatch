@@ -1,0 +1,118 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.live-badge {
+  background: rgba(255, 0, 85, 0.2);
+  color: var(--danger);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 0, 85, 0.4);
+}
+
+.main-event-card {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-event-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 224, 255, 0.1) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.match-header {
+  position: relative;
+  z-index: 1;
+}
+
+.team-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.ind-blue { background: #0084FF; color: white; }
+.aus-yellow { background: #FFD700; color: #000; }
+
+.score {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pulse-card {
+  padding: 16px;
+  text-align: center;
+}
+
+.pulse-val {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.pulse-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-item {
+  padding: 16px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.success {
+  background: rgba(0, 255, 157, 0.1);
+  color: var(--success);
+}
+
+.badge.warning {
+  background: rgba(255, 184, 0, 0.1);
+  color: var(--warning);
+}
+
+.text-primary { color: var(--primary-accent); }
+.text-secondary { color: var(--secondary-accent); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-danger { color: var(--danger); }
+.mb-2 { margin-bottom: 8px; }
